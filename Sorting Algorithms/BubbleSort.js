@@ -20,9 +20,10 @@ function bubbleSort(arr) {
 function bubbleSort2(arr) {
   console.log("1");
   var isSorted = false;
+  var lastSorted = arr.length - 1;
   while (!isSorted) {
     isSorted = true;
-    for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < lastSorted; i++) {
       if (arr[i] > arr[i + 1]) {
         var temp = arr[i];
         arr[i] = arr[i + 1];
@@ -30,6 +31,7 @@ function bubbleSort2(arr) {
         isSorted = false;
       }
     }
+    lastSorted--;
   }
   return arr;
 }
