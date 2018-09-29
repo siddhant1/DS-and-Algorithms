@@ -19,3 +19,13 @@ function binarySearch(arr, num) {
 }
 
 console.log(binarySearch([1, 2, 3, 4,56,648,8579,42354265],42354265));
+
+
+
+//Complexity of binary search is o(log2n)
+/*n -> n/2 ->n/4 -> n/8 ..... 1
+* iterations = n/2^k
+* n/2^k=1
+* k = log2(n)
+* the complexity of binary search is o(log2n)
+*/
