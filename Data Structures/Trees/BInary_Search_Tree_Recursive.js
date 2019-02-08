@@ -57,6 +57,43 @@ class BinarySearchTree {
     return this.root.findNode(value)
   }
 
+  dfsPreorder() {
+    //Use this method to traverse your tree using Depth First Search (POSTORDER,PREORDER,INORDER)
+    const data = []
+    const root = this.root
+    function traverse(node) {
+      data.push(node.value)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+    traverse(root)
+    return data
+  }
+
+  dfsPostOrder() {
+    const data = []
+    const root = this.root
+    function traverse(node) {
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+      data.push(node.value)
+    }
+    traverse(root)
+    return data
+  }
+
+  dfsInorder() {
+    const data = []
+    const root = this.root
+    function traverse(node) {
+      if (node.left) traverse(node.left)
+      data.push(node.value)
+      if (node.right) traverse(node.right)
+    }
+    traverse(root)
+    return data
+  }
+
   bfs() {
     // Use this method to traverse your tree using Breadth First Search Technique
     const queue = []
@@ -84,5 +121,8 @@ tree.insert(3)
 tree.insert(8)
 tree.insert(20)
 console.log(tree.bfs())
+console.log(tree.dfsPreorder())
+console.log(tree.dfsPostOrder())
+console.log(tree.dfsInorder())
 // tree.insert(7);
 console.log(tree.find(71))
